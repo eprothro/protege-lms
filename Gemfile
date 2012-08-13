@@ -35,6 +35,7 @@ end
 
 group :production do
   gem 'pg', '~> 0.14.0'
+  gem 'newrelic_rpm', '~> 3.4.1'
 end
 
 gem 'jquery-rails'

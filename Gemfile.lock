@@ -111,6 +111,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     netrc (0.7.5)
+    newrelic_rpm (3.4.1)
     nokogiri (1.5.5)
     orm_adapter (0.0.7)
     paper_trail (2.6.3)
@@ -227,6 +228,7 @@ DEPENDENCIES
   haml-rails (~> 0.3.4)
   heroku
   jquery-rails
+  newrelic_rpm (~> 3.4.1)
   pg (~> 0.14.0)
   rails (= 3.2.8)
   refinerycms (~> 2.0.0)
