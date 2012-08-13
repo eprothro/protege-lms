@@ -1,12 +1,23 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'haml-rails', '~> 0.3.4'
+gem 'fog', '~> 1.5.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Refinery CMS
+gem 'refinerycms', '~> 2.0.0'
+
+# Specify additional Refinery CMS Extensions here (all optional):
+gem 'refinerycms-i18n', '~> 2.0.0'
+#  gem 'refinerycms-blog', '~> 2.0.0'
+#  gem 'refinerycms-inquiries', '~> 2.0.0'
+#  gem 'refinerycms-search', '~> 2.0.0'
+#  gem 'refinerycms-page-images', '~> 2.0.0'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'heroku'
+  gem 'debugger'
 end
 
 
@@ -22,6 +33,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg', '~> 0.14.0'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -35,16 +50,3 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
-# Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
-
-# Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n', '~> 2.0.0'
-#  gem 'refinerycms-blog', '~> 2.0.0'
-#  gem 'refinerycms-inquiries', '~> 2.0.0'
-#  gem 'refinerycms-search', '~> 2.0.0'
-#  gem 'refinerycms-page-images', '~> 2.0.0'
