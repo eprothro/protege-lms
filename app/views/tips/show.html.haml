@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Body:
+  = @tip.body
+%p
+  %b Question:
+  = @tip.question
+
+= link_to 'Edit', edit_tip_path(@tip)
+\|
+= link_to 'Back', tips_path

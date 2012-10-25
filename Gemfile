@@ -18,6 +18,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'heroku'
   gem 'debugger'
+  gem "rails-erd"
 end
 
 

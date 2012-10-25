@@ -1,0 +1,21 @@
+%h1 Listing tips
+
+%table
+  %tr
+    %th Body
+    %th Question
+    %th
+    %th
+    %th
+
+  - @tips.each do |tip|
+    %tr
+      %td= tip.body
+      %td= tip.question
+      %td= link_to 'Show', tip
+      %td= link_to 'Edit', edit_tip_path(tip)
+      %td= link_to 'Destroy', tip, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Tip', new_tip_path
