@@ -4,16 +4,6 @@ gem 'rails', '3.2.8'
 gem 'haml-rails', '~> 0.3.4'
 gem 'fog', '~> 1.5.0'
 
-# Refinery CMS
-gem 'refinerycms', '~> 2.0.8'
-
-# Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n', '~> 2.0.0'
-#  gem 'refinerycms-blog', '~> 2.0.0'
-#  gem 'refinerycms-inquiries', '~> 2.0.0'
-#  gem 'refinerycms-search', '~> 2.0.0'
-#  gem 'refinerycms-page-images', '~> 2.0.0'
-
 group :development, :test do
   gem 'sqlite3'
   gem 'heroku'
