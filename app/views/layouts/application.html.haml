@@ -1,0 +1,10 @@
+%html
+  %head
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+  %body
+    = yield
+    :javascript
+      $('.wysihtml5').each(function(i, elem) {
+        $(elem).wysihtml5();
+      });
