@@ -1,17 +1,22 @@
-%table
-  %tr
-    %th #
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
-
-  - @courses.each do |course|
+- if @courses.present?
+  %table
     %tr
-      %td= course.number
-      %td= course.title
-      %td= (strip_tags course.description).html_safe
-      %td= link_to 'Show', course
-      %td= link_to 'Edit', edit_course_path(course)
-      %td= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+      %th #
+      %th Title
+      %th Description
+      %th
+      %th
+      %th
+
+    - @courses.each do |course|
+      %tr
+        %td= course.number
+        %td= course.title
+        %td= (strip_tags course.description).html_safe
+        %td= link_to 'Show', course
+        %td= link_to 'Edit', edit_course_path(course)
+        %td= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+- else
+  .none_present
+    :markdown
+      No courses exist yet. Be the first to [create one](#{new_course_path(series_id: @series.id)})...
