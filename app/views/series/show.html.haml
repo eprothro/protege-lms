@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%h2= @series.title
+.description
+  = @series.description.html_safe
+
+%h3 Courses in This Series
+= render partial: 'courses/list', locals: {:'@courses' => @series.courses}
+
+= link_to 'Edit', edit_series_path(@series)
+\|
+= link_to 'Back', series_index_path

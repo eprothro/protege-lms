@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 gem 'haml-rails', '~> 0.3.4'
 gem 'fog', '~> 1.5.0'
+gem 'rdiscount', '~> 1.6.8'
 
 group :development, :test do
   gem 'sqlite3'

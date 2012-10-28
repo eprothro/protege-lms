@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %h1.course_heading
-  %span.course_number= "#{@course.number}  - " if @course.number
+  %span.course_number= "[#{@course.number}]" if @course.number
   %span.course_title= @course.title
 
 %p= @course.description.html_safe

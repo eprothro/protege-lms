@@ -1,5 +1,7 @@
 ProtegeLsm::Application.routes.draw do
 
+  resources :series
+
   resources :courses
 
   resources :tips
@@ -59,7 +61,7 @@ ProtegeLsm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'courses#index'
+  root :to => 'pages#welcome'
 
   # See how all your routes lay out with "rake routes"
 

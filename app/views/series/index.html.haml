@@ -1,0 +1,21 @@
+%h2 Available Series
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th
+    %th
+    %th
+
+  - @series.each do |series|
+    %tr
+      %td= series.title
+      %td= series.description
+      %td= link_to 'Show', series
+      %td= link_to 'Edit', edit_series_path(series)
+      %td= link_to 'Destroy', series, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'Create a New Series', new_series_path

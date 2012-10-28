@@ -1,22 +1,6 @@
-%h1 Listing courses
+%h2 Available Courses
 
-%table
-  %tr
-    %th #
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
-
-  - @courses.each do |course|
-    %tr
-      %td= course.number
-      %td= course.title
-      %td= strip_tags course.description
-      %td= link_to 'Show', course
-      %td= link_to 'Edit', edit_course_path(course)
-      %td= link_to 'Destroy', course, :confirm => 'Are you sure?', :method => :delete
+= render "list"
 
 %br
 

@@ -1,0 +1,12 @@
+%h1 Editing series
+
+= render 'form'
+
+%h3 Courses in This Series
+= render partial: 'courses/list', locals: {:'@courses' => @series.courses}
+
+= link_to 'Show', @series
+\|
+= link_to 'Back', series_index_path
+\|
+= link_to 'Add a Course', new_course_path(series_id: params[:id])
