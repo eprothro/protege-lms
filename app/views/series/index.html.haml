@@ -11,7 +11,7 @@
   - @series.each do |series|
     %tr
       %td= series.title
-      %td= series.description
+      %td= (strip_tags series.description).html_safe
       %td= link_to 'Show', series
       %td= link_to 'Edit', edit_series_path(series)
       %td= link_to 'Destroy', series, :confirm => 'Are you sure?', :method => :delete
