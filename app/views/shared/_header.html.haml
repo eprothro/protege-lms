@@ -1,0 +1,10 @@
+%header
+  .navbar
+    .navbar-inner
+      .container{style: "width: auto"}
+        = link_to 'Protégé', root_path, class: 'brand'
+        %nav
+          .nav-collapse
+            %ul.nav
+              %li= link_to 'All Series', series_index_path
+              %li= link_to 'All Courses', courses_path

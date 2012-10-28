@@ -1,0 +1,12 @@
+%p#notice= notice
+
+= link_to 'Edit', edit_lesson_path(@lesson), class: 'btn pull-right'
+
+%h1.page-header= @lesson.title
+
+.muted.pull-right
+  :markdown
+    _This lesson is part of '#{link_to @lesson.course, @lesson.course}'_
+
+.lesson.well.clear-right
+  = @lesson.body.html_safe

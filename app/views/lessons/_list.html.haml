@@ -1,0 +1,15 @@
+- if @lessons.present?
+  %table.table
+    %tr
+      %th Title
+      %th Body
+
+    - @lessons.each do |lesson|
+      %tr
+        %td= link_to lesson.title, lesson
+        %td= (strip_tags lesson.body).html_safe
+- else
+  .none_present
+    -if @course.present?
+      :markdown
+        No lessons exist yet. Be the first to [create one](#{new_lesson_path(course_id: @course.id)})...

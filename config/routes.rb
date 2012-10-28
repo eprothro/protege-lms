@@ -1,5 +1,7 @@
 ProtegeLsm::Application.routes.draw do
 
+  resources :lessons
+
   resources :series
 
   resources :courses
