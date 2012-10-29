@@ -1,6 +1,9 @@
 %p#notice= notice
 
-= link_to 'Edit Series', edit_series_path(@series), class: 'btn pull-right'
+.pull-right.btn-group
+  = link_to 'Edit Series', edit_series_path(@series), class: 'btn'
+  = link_to 'Delete Series', @series, :confirm => 'Are you sure?', :method => :delete, class: 'btn'
+
 %h2.page-header= @series.title
 
 .description.well

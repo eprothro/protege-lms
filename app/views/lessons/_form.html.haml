@@ -6,12 +6,12 @@
         - @lesson.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.title
     = f.label :title
     = f.text_field :title
   .field
     = f.label :body
-    = f.text_area :body, {id: 'lesson_body',class: 'wysihtml5', placeholder: "Explain this topic; Ideally the reader can consume this information in 10 minutes or less. Anything longer should be broken into multiple lessons..."}
+    = f.text_area :body, {style: "width: 90%; max-width: 960px;", id: 'lesson_body', class: 'wysihtml5', placeholder: "Explain this topic; Ideally the reader can consume this information in 10 minutes or less. Anything longer should be broken into multiple lessons..."}
   = f.hidden_field :course_id, value: params[:course_id]
   .actions
     = f.submit 'Save'

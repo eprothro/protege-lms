@@ -1,16 +1,11 @@
 %h2 Available Series
 
 %table.table
-  %tr
-    %th Title
-    %th Description
-    %th
-    %th
-    %th
 
   - @series.each do |series|
     %tr
-      %td= link_to series.title, series
+      %td
+        %strong= link_to series.title, series
       %td= (strip_tags series.description).html_safe
 
 %br

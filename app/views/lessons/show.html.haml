@@ -1,6 +1,8 @@
 %p#notice= notice
 
-= link_to 'Edit', edit_lesson_path(@lesson), class: 'btn pull-right'
+.pull-right.btn-group
+  = link_to 'Edit Lesson', edit_lesson_path(@lesson), class: 'btn'
+  = link_to 'Delete Lesson', @lesson, :confirm => 'Are you sure?', :method => :delete, class: 'btn'
 
 %h1.page-header= @lesson.title
 

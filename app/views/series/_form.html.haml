@@ -6,11 +6,11 @@
         - @series.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.title
     = f.label :title
     = f.text_field :title
   .field
     = f.label :description
-    = f.text_area :description, {id: 'course_description',class: 'wysihtml5', placeholder: "What does your series cover?"}
+    = f.text_area :description, {style: "width: 90%; max-width: 960px", id: 'course_description',class: 'wysihtml5', placeholder: "What does your series cover?"}
   .actions
     = f.submit 'Save'
