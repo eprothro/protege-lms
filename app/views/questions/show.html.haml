@@ -1,8 +1,8 @@
 %p#notice= notice
 
-%p
-  %b Body:
-  = @question.body
+%b Body:
+= @question.body
+= render partial: 'answers/list', locals: {:'@answers' => @question.answers}
 
 = link_to 'Edit', edit_question_path(@question)
 \|

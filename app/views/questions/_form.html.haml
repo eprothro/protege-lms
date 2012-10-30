@@ -1,4 +1,4 @@
-= form_for @question do |f|
+= form_for @question, url: quiz_questions_path(@question.quiz) do |f|
   -if @question.errors.any?
     #error_explanation
       %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"

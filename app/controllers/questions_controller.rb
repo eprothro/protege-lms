@@ -25,6 +25,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new.json
   def new
     @question = Question.new
+    @question.quiz_id = params[:quiz_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(params[:question])
+    @question.quiz_id = params[:quiz_id]
 
     respond_to do |format|
       if @question.save

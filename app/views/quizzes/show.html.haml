@@ -1,6 +1,15 @@
 %p#notice= notice
 
+.pull-right.btn-group
+  = link_to 'Edit Quiz', edit_quiz_path(@quiz), class: 'btn'
+  = link_to 'Delete Quiz', @quiz, :confirm => 'Are you sure?', :method => :delete, class: 'btn'
 
-= link_to 'Edit', edit_quiz_path(@quiz)
-\|
-= link_to 'Back', quizzes_path
+%h1.page-header= "<em>#{link_to @quiz.lesson, @quiz.lesson}</em> Quiz".html_safe
+
+- if @quiz.questions.present?
+  =render partial: 'questions/list', locals: {:'@questions' => @quiz.questions}
+- else
+  .well
+    :markdown
+      No questions exist yet. To get started, [create one...](#{new_quiz_question_path(@quiz)})
+

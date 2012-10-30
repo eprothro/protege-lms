@@ -1,7 +1,13 @@
+.pull-right= link_to 'Show Lesson', @lesson, class: 'btn'
 %h1 Editing lesson
 
 = render 'form'
 
-= link_to 'Show', @lesson
-\|
-= link_to 'Back', lessons_path
+%h3 Lesson Quiz
+- if @lesson.quiz.present?
+  =render partial: 'questions/list', locals: {:'@questions' => @lesson.quiz.questions}
+- else
+  .well
+    :markdown
+      No Quiz curretly exists. [Add one](#{new_lesson_quiz_path(@lesson)}) to help others solidify their knowledge and get useful feeback on their progress.
+  = link_to 'Add a Quiz', new_lesson_quiz_path(@lesson), class: 'btn'

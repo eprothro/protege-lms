@@ -1,4 +1,4 @@
-= form_for @course, url: series_courses_path(params[:series_id]) do |f|
+= form_for @course, url: series_courses_path(@course.series) do |f|
   -if @course.errors.any?
     #error_explanation
       %h2= "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"

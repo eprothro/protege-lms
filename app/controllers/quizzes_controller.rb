@@ -25,6 +25,7 @@ class QuizzesController < ApplicationController
   # GET /quizzes/new.json
   def new
     @quiz = Quiz.new
+    @quiz.lesson_id = params[:lesson_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +42,7 @@ class QuizzesController < ApplicationController
   # POST /quizzes.json
   def create
     @quiz = Quiz.new(params[:quiz])
-
+    @quiz.lesson_id = params[:lesson_id]
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }

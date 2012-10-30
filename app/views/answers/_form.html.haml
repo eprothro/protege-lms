@@ -1,4 +1,4 @@
-= form_for @answer do |f|
+= form_for @answer, url: question_answers_path(@answer.question) do |f|
   -if @answer.errors.any?
     #error_explanation
       %h2= "#{pluralize(@answer.errors.count, "error")} prohibited this answer from being saved:"
@@ -10,7 +10,7 @@
     = f.label :text
     = f.text_field :text
   .field
-    = f.label :explanation
-    = f.text_field :explanation
+    = f.label :explanation, 'Explanation (optional)'
+    = f.text_area :explanation, placeholder: 'Why is this right or wrong?'
   .actions
     = f.submit 'Save'

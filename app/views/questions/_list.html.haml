@@ -1,0 +1,8 @@
+- if @questions.present?
+  %ul
+  - @questions.each do |question|
+    %li.question
+      %span.text= question.body
+      %span.edit= link_to 'Edit', edit_question_path(question)
+      %span.delete= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete
+      =render partial: 'answers/list', locals: {:'@answers' => question.answers}

@@ -1,4 +1,4 @@
-= form_for @lesson, url: course_lessons_path(params[:course_id]) do |f|
+= form_for @lesson, url: course_lessons_path(@lesson.course) do |f|
   -if @lesson.errors.any?
     #error_explanation
       %h2= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"

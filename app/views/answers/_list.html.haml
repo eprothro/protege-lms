@@ -1,0 +1,11 @@
+- if @answers.present?
+  %ul
+    - @answers.each do |answer|
+      %li.answer
+        %span.text= answer.text
+        %span.explanation= answer.explanation
+        = form_for answer, :html => { :class => "inline" } do |f|
+          = f.hidden_field :correct, value: !answer.correct?
+          = f.submit answer.correct? ? "Mark as Incorrect" : "Mark as Correct", class: 'btn btn-mini'
+        %span.edit= link_to 'Edit', edit_answer_path(answer), class: 'btn btn-mini'
+        %span.delete= link_to 'Destroy', answer, :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-mini'

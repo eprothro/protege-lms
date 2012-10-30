@@ -2,6 +2,5 @@
 
 = render 'form'
 
-= link_to 'Show', @question
-\|
-= link_to 'Back', questions_path
+= render partial: 'answers/list', locals: {:'@answers' => @question.answers}
+= link_to 'Add an Answer', new_question_answer_path(@question), class: 'btn'
