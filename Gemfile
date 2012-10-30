@@ -12,6 +12,10 @@ group :development, :test do
   gem "rails-erd"
 end
 
+group :development do
+  gem 'sextant'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,4 @@
-= form_for @lesson do |f|
+= form_for @lesson, url: course_lessons_path(params[:course_id]) do |f|
   -if @lesson.errors.any?
     #error_explanation
       %h2= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"
@@ -12,6 +12,5 @@
   .field
     = f.label :body
     = f.text_area :body, {style: "width: 90%; max-width: 960px;", id: 'lesson_body', class: 'wysihtml5', placeholder: "Explain this topic; Ideally the reader can consume this information in 10 minutes or less. Anything longer should be broken into multiple lessons..."}
-  = f.hidden_field :course_id, value: params[:course_id]
   .actions
     = f.submit 'Save'

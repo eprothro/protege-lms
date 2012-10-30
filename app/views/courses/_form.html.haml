@@ -1,4 +1,4 @@
-= form_for @course do |f|
+= form_for @course, url: series_courses_path(params[:series_id]) do |f|
   -if @course.errors.any?
     #error_explanation
       %h2= "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"
@@ -13,7 +13,6 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.text_area :description, {style: "width:90%", id: 'course_description',class: 'wysihtml5', placeholder: "What does this course cover?"}
-  =f.hidden_field :series_id, value: params[:series_id]
+    = f.text_area :description, {style: "width: 90%; max-width: 960px", id: 'course_description',class: 'wysihtml5', placeholder: "What does this course cover?"}
   .actions
     = f.submit 'Save'

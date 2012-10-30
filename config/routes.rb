@@ -1,18 +1,30 @@
 ProtegeLsm::Application.routes.draw do
 
-  resources :lessons
+  resources :series do
+    resources :courses
+  end
 
+  resources :courses do
+    resources :lessons
+  end
+
+  resources :lessons do
+    resources :quizzes
+  end
+
+  resources :quizzes do
+    resources :questions
+  end
+
+  resources :questions do
+    resources :answers
+    resources :tips
+  end
+
+  # a series can be created independently of any other objects
+  # the rest of the objects cannot (must use create paths above)
   resources :series
-
-  resources :courses
-
-  resources :tips
-
-  resources :answers
-
-  resources :questions
-
-  resources :quizzes
+  resources :courses, :lessons, :quizzes, :questions, :answers, :tips, except: :new
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

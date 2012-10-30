@@ -41,6 +41,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(params[:lesson])
+    @lesson.course_id = params[:course_id]
 
     respond_to do |format|
       if @lesson.save

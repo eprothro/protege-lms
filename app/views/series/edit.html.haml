@@ -9,6 +9,6 @@
 \|
 = link_to 'Back', series_index_path
 \|
-= link_to 'Add a Course', new_course_path(series_id: params[:id])
+= link_to 'Add a Course', new_series_course_path(@series)
 
 .delete= link_to 'Delete this Series', @series, :confirm => 'Are you sure?', :method => :delete

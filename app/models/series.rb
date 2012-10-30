@@ -1,5 +1,5 @@
 class Series < ActiveRecord::Base
-  attr_accessible :description, :title
+  attr_accessible :title, :description
   has_many :courses
   validates_presence_of :title, :description
 

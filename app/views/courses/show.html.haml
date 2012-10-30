@@ -18,4 +18,4 @@
 %h3 Lessons in this Course
 = render partial: 'lessons/list', locals: {:'@lessons' => @course.lessons}
 %br
-= link_to 'Add a Lesson', new_lesson_path(course_id: @course.id), class: 'btn'
+= link_to 'Add a Lesson', new_course_lesson_path(@course), class: 'btn'

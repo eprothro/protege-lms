@@ -12,4 +12,4 @@
 %h3 Courses in This Series
 = render partial: 'courses/list', locals: {:'@courses' => @series.courses}
 %br
-= link_to 'Add a Course', new_course_path(series_id: @series.id), class: 'btn'
+= link_to 'Add a Course', new_series_course_path(@series), class: 'btn'
