@@ -1,0 +1,12 @@
+- if courses.present?
+  %ul
+    - courses.each do |course|
+      %li= link_to course.name, course
+- else
+  .none.text-center
+    %p.lead You haven't enrolled in any courses yet...
+    %p
+      Get started by clicking 'take this course' from any course page.
+    %p
+      = link_to 'Browse series of courses', series_path, class: 'btn btn-small'
+      = link_to 'Browse all courses', courses_path, class: 'btn btn-small'

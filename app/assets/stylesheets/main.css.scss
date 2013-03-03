@@ -2,3 +2,8 @@
 @import "global";
 @import "forms";
 @import "bootstrap-wysihtml5";
+
+header .container.sign-in{
+  float: right;
+  margin: 0px 20px;
+}

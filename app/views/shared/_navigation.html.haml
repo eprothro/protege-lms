@@ -1,0 +1,25 @@
+%header
+  .navbar
+    .navbar-inner
+      .container{style: "width: auto"}
+        = link_to 'Protégé', root_path, class: 'brand'
+        %nav
+          .nav-collapse
+            %ul.nav
+              %li.divider-vertical
+              %li= link_to 'Series', series_index_path
+              %li.divider-vertical
+              %li= link_to 'Courses', courses_path
+              %li.divider-vertical
+              %li= link_to 'Lessons', lessons_path
+            .container.sign-in{style: "width: auto"}
+              %ul.nav
+                %li.divider-vertical
+                - if current_user
+                  %li= link_to current_user.email, current_user
+                  %li.divider-vertical
+                  %li= link_to "Sign out", destroy_user_session_path
+                - else
+                  %li= link_to 'Sign up for free', new_user_registration_path
+                  %li.divider-vertical
+                  %li= link_to 'Sign in', new_user_session_path

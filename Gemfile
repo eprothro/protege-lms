@@ -11,14 +11,16 @@ gem "rdiscount",                      "~> 1.6.8"
 gem "thin",                           "~> 1.5.0"
 
 group :production do
-  gem "pg",                             "~> 0.14.0"
-  gem "newrelic_rpm",                   "~> 3.4.1"
+  gem "pg",                           "~> 0.14.0"
+  gem "newrelic_rpm",                 "~> 3.4.1"
 end
 
 group :development, :test do
   gem "sqlite3"
   gem "heroku"
   gem "debugger"
+  gem "mailcatcher",                  "~> 0.5.10"
+  gem "quiet_assets"
   gem "rails-erd"
 end
 
@@ -31,9 +33,7 @@ end
 group :assets do
   gem "sass-rails",                     "~> 3.2.3"
   gem "coffee-rails",                   "~> 3.2.1"
-  #gem "sass-twitter-bootstrap-rails",  "~> 1.0"
-  #gem "anjlab-bootstrap-rails",        "~> 2.1", :require => "bootstrap-rails"
-  gem "twitter-bootstrap-rails",        "~> 2.1"
+  gem "twitter-bootstrap-rails",        "~> 2.2.4"
   gem "bootstrap-wysihtml5-rails",      "~> 0.3"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

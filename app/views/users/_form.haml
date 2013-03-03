@@ -1,0 +1,9 @@
+= form_for user do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :location
+  = f.text_field :location
+  = f.label :bio
+  = f.text_area :bio, rows: 5, max_length: 140, placeholder: 'A little about yourself in 140 characters or less...'
+  .save
+    = f.submit "Save", class: 'btn btn-primary clear-left'

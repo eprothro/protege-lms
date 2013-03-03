@@ -5,9 +5,10 @@
     %meta{name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0"}
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-  = render 'shared/header'
   %body
-    = yield
+    = render 'shared/navigation'
+    .container
+      = yield
     :javascript
       $('.wysihtml5').each(function(i, elem) {
         $(elem).wysihtml5();

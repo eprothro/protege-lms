@@ -1,0 +1,7 @@
+.row
+  .span3
+    %ul.nav.nav-list
+      %li= link_to 'Change Email Address', edit_user_registration_path
+      %li= link_to 'Change Password', edit_user_registration_path
+  .span9
+    = render partial: 'form', locals: {user: @user}
