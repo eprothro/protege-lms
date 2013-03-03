@@ -10,6 +10,7 @@
     .container
       = render 'shared/messages'
       = yield
+      .row#footer
     :javascript
       $('.wysihtml5').each(function(i, elem) {
         $(elem).wysihtml5();
