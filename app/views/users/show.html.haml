@@ -3,6 +3,15 @@
     = image_tag avatar_url(@user, size: 210), class: 'img-polaroid'
     %h4= @user.name
     %h5= @user.email
+    %hr
+    %h5 Organizations
+    - if @user.organizations.blank?
+      %p.muted.text-center No organizations yet
+    - @user.organizations.each do |org|
+      = image_tag avatar_url(org, size: 48), class: 'img-polaroid', alt: org.name
+    %a.btn.pull-right{href: new_organization_path}
+      %i.icon-globe
+      Create new organization
 
   .span9
     .row
