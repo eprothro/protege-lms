@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ProtegeLsm::Application.load_tasks
+ProtegeLms::Application.load_tasks

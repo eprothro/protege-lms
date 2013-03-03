@@ -1,4 +1,6 @@
-ProtegeLsm::Application.routes.draw do
+ProtegeLms::Application.routes.draw do
+
+  devise_for :users
 
   resources :series do
     resources :courses
