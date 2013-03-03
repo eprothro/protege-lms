@@ -5,6 +5,7 @@ ruby "1.9.3"
 
 gem "devise",                         "~> 2.2.3"
 gem "haml-rails",                     "~> 0.3.4"
+gem "hashie",                         "~> 1.2.0"
 gem "fog",                            "~> 1.5.0"
 gem "jquery-rails"
 gem "rdiscount",                      "~> 1.6.8"
@@ -33,16 +34,8 @@ end
 group :assets do
   gem "sass-rails",                     "~> 3.2.3"
   gem "coffee-rails",                   "~> 3.2.1"
-  gem "twitter-bootstrap-rails",        "~> 2.2.4"
-  gem "less-rails"
-  # rubyracer adds js runtime to compile LESS
-  # in twitter-bootsrap-rails
-  gem "therubyracer"
+  gem "bootstrap-sass",                 "~> 2.3.0.1"
   gem "bootstrap-wysihtml5-rails",      "~> 0.3"
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem "therubyracer", :platforms => :ruby
-
   gem "uglifier",                       ">= 1.0.3"
 end
 

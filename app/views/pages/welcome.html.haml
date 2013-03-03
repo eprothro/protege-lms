@@ -1,7 +1,17 @@
 .hero-unit
-  %h1 Well, hi there.
-  %p.welcome
-    :markdown
-      Welcome to Protégé. We're creating a simpler learning management system, based on trusting our users. When people _want_ to learn, we can remove the friction in connecting them to those with knowledge and expertise.
+  - if current_user
+    %h1 Welcome back.
+    - quote = random_learning_quote
+    %blockquote
+      %p= quote.text
+      %small= quote.author
+
+
+  - else
+    %h1 Well, hi there.
+    %p.welcome
+      :markdown
+        Welcome to Protégé. We're creating a simpler learning management system, based on trusting our users. When people _want_ to learn, we can remove the friction in connecting them to those with knowledge and expertise.
+    = link_to 'Create an Account »', new_user_registration_path, class: 'btn btn-primary btn-large'
 .series
   = render template: 'series/index'
