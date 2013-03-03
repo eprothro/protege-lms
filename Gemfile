@@ -8,6 +8,7 @@ gem "haml-rails",                     "~> 0.3.4"
 gem "fog",                            "~> 1.5.0"
 gem "jquery-rails"
 gem "rdiscount",                      "~> 1.6.8"
+gem "thin",                           "~> 1.5.0"
 
 group :production do
   gem "pg",                             "~> 0.14.0"
