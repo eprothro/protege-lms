@@ -13,7 +13,10 @@ module ApplicationHelper
   def random_learning_quote
     quotes = [
       {text: "Develop a passion for learning. If you do, you will never cease to grow.", author: "Anthony J. D'Angelo"},
-      {text: "Leadership and learning are indispensable to each other.", author: "John F. Kennedy "}
+      {text: "Leadership and learning are indispensable to each other.", author: "John F. Kennedy "},
+      {text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: 'Mahatma Gandhi'},
+      {text: "It is not that I'm so smart. But I stay with the questions much longer.", author: "Albert Einstein"},
+      {text: "Tell me and I forget, teach me and I may remember, involve me and I learn.", author: "Benjamin Franklin"}
     ]
 
     Hashie::Mash.new(quotes.sample)
