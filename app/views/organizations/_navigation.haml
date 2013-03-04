@@ -1,0 +1,5 @@
+.navbar
+  .navbar-inner
+    %ul.nav
+      %li{class: ('active' unless params[:tab].present?)}
+        = link_to 'Teams', tab: nil

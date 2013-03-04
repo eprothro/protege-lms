@@ -1,0 +1,32 @@
+.row
+  %h3
+    = image_tag avatar_url(@organization, size: 28), class: 'img-border'
+    = @organization.name
+  =render partial: 'navigation'
+
+  .span7
+    - if @organization.teams.present?
+      %ul
+        - @organization.teams.each do |team|
+          %li
+            %h4= link_to team.name, tab: nil
+            %span.badge= team.members.count
+            %span members
+            =link_to 'Remove', destroy_organization_path, class: 'btn btn-danger'
+    - else
+      %p.none.muted
+        %em= @organization.name
+        %span hasn't set up any teams yet.
+      %a.btn{href: new_organization_team_path(@organization)}
+        %i.icon-plus
+        Add a team
+
+  .span5
+    .alert
+      %small
+        :markdown
+          **Teams** simplify things.
+          You can set up a **curriculum** for a team and easily view individual **progress**.
+          Also, team members can **communicate** with each other easily.
+          You may set up as many teams as you like
+

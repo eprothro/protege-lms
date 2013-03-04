@@ -30,7 +30,9 @@ ProtegeLms::Application.routes.draw do
     resources :tips
   end
 
-  resources :organizations, except: [:index]
+  resources :organizations, except: [:index] do
+    resources :teams
+  end
 
   # a series can be created independently of any other objects
   # the rest of the objects cannot (must use create paths above)

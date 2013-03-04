@@ -6,10 +6,11 @@
     %hr
     %h5 Organizations
     - if @user.organizations.blank?
-      %p.muted.text-center No organizations yet
+      %p.muted
+        You aren't a part of any organizations yet...
     - @user.organizations.each do |org|
       = image_tag avatar_url(org, size: 48), class: 'img-polaroid', alt: org.name
-    %a.btn.pull-right{href: new_organization_path}
+    %a.btn{href: new_organization_path}
       %i.icon-globe
       Create new organization
 
@@ -22,10 +23,7 @@
           = link_to 'Some other thing', tab: 'other'
       %a.btn.pull-right{href: edit_user_path}
         %i.icon-pencil
-        Edit My Profile
+        Edit my profile
     .row
       - if params[:tab].blank?
         = render partial: 'courses', locals: { courses: @user.courses }
-
-
-
