@@ -11,4 +11,5 @@
   = f.label :gravatar_email
   = f.text_field :gravatar_email
   .submit
-    = f.submit 'Create Organization', class: 'btn btn-primary'
+    - submit_text = @organization.id.blank? ? 'Create organization' : 'Save changes'
+    = f.submit submit_text, class: 'btn btn-primary'
