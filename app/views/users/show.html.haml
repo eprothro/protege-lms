@@ -3,6 +3,9 @@
     = image_tag avatar_url(@user, size: 210), class: 'img-polaroid'
     %h4= @user.name
     %h5= @user.email
+    %a.btn{href: edit_user_path}
+      %i.icon-pencil
+      Edit my profile
     %hr
     %h5 Organizations
     - if @user.organizations.blank?
@@ -16,14 +19,11 @@
 
   .span9
     .row
-      %ul.span7.nav.nav-tabs.pull-left
+      %ul.span9.nav.nav-tabs.pull-left
         %li{class: ('active' unless params[:tab].present?)}
           = link_to 'Courses', tab: nil
         %li{class: ('active' if params[:tab] == 'other')}
           = link_to 'Some other thing', tab: 'other'
-      %a.btn.pull-right{href: edit_user_path}
-        %i.icon-pencil
-        Edit my profile
     .row
       - if params[:tab].blank?
         = render partial: 'courses', locals: { courses: @user.courses }
