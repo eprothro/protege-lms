@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   has_many :organizations, through: :teams
   has_many :enrollments
   has_many :courses, through: :enrollments
+
+  def to_s
+    name || email
+  end
 end

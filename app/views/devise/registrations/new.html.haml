@@ -15,7 +15,10 @@
 
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-
+    %p
     .submit= f.submit "Sign up", class: 'btn btn-primary'
+
+.span5.offset3
+  %hr
 
   = render "devise/shared/links"

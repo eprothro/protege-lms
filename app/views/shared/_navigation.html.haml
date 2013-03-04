@@ -15,7 +15,7 @@
           %ul.nav
             %li.divider-vertical
             - if current_user
-              %li= link_to current_user.email, current_user
+              %li= link_to current_user, current_user
               %li.divider-vertical
               %li= link_to "Sign out", destroy_user_session_path
             - else
