@@ -3,3 +3,5 @@
     %ul.nav
       %li{class: ('active' unless params[:tab].present?)}
         = link_to 'Teams', tab: nil
+      %li{class: ('active' if params[:tab] == 'administration')}
+        = link_to 'Administration', tab: 'administration'
