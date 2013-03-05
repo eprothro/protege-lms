@@ -17,7 +17,7 @@ class OrganizationsController < ApplicationController
     @organization = Organization.create(params[:organization])
 
     if @organization.errors.present?
-      render action: 'new'
+      render action: 'edit'
     else
       redirect_to organization_path(@organization)
     end
