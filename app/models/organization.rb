@@ -14,7 +14,6 @@ class Organization < ActiveRecord::Base
 
   def add_creator_to_owners_team
     self.teams.create!(name: 'Owners')
-    debugger
     self.teams.first.members << self.creator
   end
 end
