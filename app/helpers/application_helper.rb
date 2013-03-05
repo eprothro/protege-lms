@@ -4,7 +4,7 @@ module ApplicationHelper
     opts[:email] ||= resource.try(:gravatar_email) rescue nil
     opts[:email] ||= resource.try(:email) rescue nil
 
-    gravatar_id = Digest::MD5::hexdigest(opts[:email]).downcase
+    gravatar_id = Digest::MD5::hexdigest(opts[:email].to_s).downcase
 
     # 48 px gravatar with mystery man as the default
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{opts[:size]}&d=mm"

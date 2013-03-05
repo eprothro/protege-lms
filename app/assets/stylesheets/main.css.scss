@@ -35,7 +35,13 @@ img.pull-left{
   color: #c00;
 }
 
-
+ul.teams li{
+ list-style-type: none;
+ border-bottom: 1px solid #ddd;
+ .btn-danger{
+    margin-top: 20px;
+ }
+}
 
 #footer{
   margin: 10px 10px;
