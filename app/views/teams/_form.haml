@@ -1,0 +1,10 @@
+.span5.offset3
+  = render partial: 'shared/errors', locals: {object: @team}
+
+.span4.offset4
+  = form_for [:organization, @team] do |f|
+    = f.label :name
+    = f.text_field :name, autofocus: true
+    .submit
+      - submit_text = @team.id.blank? ? 'Create team' : 'Save changes'
+      = f.submit submit_text, class: 'btn btn-primary'

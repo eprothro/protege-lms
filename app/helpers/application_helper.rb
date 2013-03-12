@@ -21,4 +21,11 @@ module ApplicationHelper
 
     Hashie::Mash.new(quotes.sample)
   end
+
+  def team_path(team)
+    organization_team_path(team.organization, team)
+  end
+  def team_url(team)
+    organization_team_url(team.organization, team)
+  end
 end

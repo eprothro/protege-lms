@@ -1,7 +1,3 @@
-.row
-  %h3
-    = image_tag avatar_url(@organization, size: 28), class: 'img-border'
-    = @organization.name
-  = render partial: 'navigation'
+= render partial: 'navigation'
 
-  = render partial: params[:tab] || 'teams'
+= render partial: params[:tab] || 'teams'

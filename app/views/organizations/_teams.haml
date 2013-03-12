@@ -4,11 +4,11 @@
       - @organization.teams.each do |team|
         %li.clearfix
           .pull-left
-            %h4= link_to team.name, tab: nil
+            %h4= link_to team.name, team
             %span.badge= team.members.count
             %span= 'member'.pluralize(team.members.count)
           .pull-right
-            = button_to 'Remove', organization_team_path(team.organization, team.id), class: 'btn btn-danger', method: :delete
+            = button_to 'Remove', organization_team_path(team.organization, team.id), class: 'btn btn-danger', method: :delete, "data-confirm" => "Permanently delete '#{team.name}'?"
   - else
     %p.none.muted
       %em= @organization.name

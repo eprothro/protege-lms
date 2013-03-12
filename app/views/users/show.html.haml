@@ -11,9 +11,10 @@
     - if @user.organizations.blank?
       %p.muted
         You aren't a part of any organizations yet...
-    - @user.organizations.each do |org|
-      = link_to( (image_tag avatar_url(org, size: 40), class: 'img-border pull-left'), organization_path(org) )
-      = org.name
+    %ul
+      - @user.organizations.each do |org|
+        %li.avatar.pull-left
+          = link_to( (image_tag avatar_url(org, size: 40), class: 'img-border', alt: org.name), organization_path(org) )
     %a.btn{href: new_organization_path}
       %i.icon-globe
       Create new organization

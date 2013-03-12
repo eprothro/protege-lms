@@ -9,7 +9,7 @@
     = render 'shared/navigation'
     .container
       = render 'shared/messages'
-      = yield
+      = content_for?(:content) ? yield(:content) : yield
       .row#footer
     :javascript
       $('.wysihtml5').each(function(i, elem) {

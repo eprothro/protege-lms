@@ -1,0 +1,8 @@
+- content_for :content do
+  .row
+    %h3
+      = image_tag avatar_url(@organization, size: 28), class: 'img-border'
+      = @organization.name
+    = yield
+
+= render :template => 'layouts/application'

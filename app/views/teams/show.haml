@@ -1,0 +1,12 @@
+%h4= @team.name
+%h5 Members
+- if @team.members.present?
+  %ul
+    - @team.members.each do |m|
+      = render partial: "users/list_item", locals: {user: m}
+- else
+  .none.text-center
+    %p.lead This team has no members yet...
+%a.btn{ href: new_team_member_path(team_id: @team.id) }
+  %i.icon-plus
+  Add team member
