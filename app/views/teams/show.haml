@@ -1,7 +1,7 @@
 %h4= @team.name
 .span12
   = form_tag team_member_path(@team.id), method: :post do
-    = text_field_tag 'id', nil, {class: 'user-search', 'data-source-url' => users_path, style: 'width: 200px'}
+    = text_field_tag 'id', nil, {class: 'user-search', 'data-source-url' => users_path, style: 'width: 300px'}
     = button_tag 't', {class: 'btn', style: 'height: 28px'} do
       %i.icon-plus
       Add member
@@ -9,7 +9,7 @@
 - if @team.members.present?
   %ul
     - @team.members.each do |m|
-      %li.avatar.span5.clear-left
+      %li.avatar.span5.clear-left.clearfix
         .pull-left
           = render partial: "users/list_item", locals: {user: m}
         .pull-right
