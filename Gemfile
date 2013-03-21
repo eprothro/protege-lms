@@ -9,6 +9,8 @@ gem "hashie",                         "~> 1.2.0"
 gem "fog",                            "~> 1.5.0"
 gem "jquery-rails"
 gem "rdiscount",                      "~> 1.6.8"
+gem "select2-rails",                  "~> 3.3.1"
+gem "squeel",                         "~> 1.0.15"
 gem "thin",                           "~> 1.5.0"
 
 group :production do

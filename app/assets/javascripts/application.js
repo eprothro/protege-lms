@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-wysihtml5
+//= require select2
 //
 // Loads all Bootstrap javascripts (bootstrap-sass helper)
 //= require bootstrap

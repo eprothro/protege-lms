@@ -31,9 +31,10 @@ class TeamsController < ApplicationController
   end
 
   def add_member
-    @team.members.create(params[:id])
-
-    if @team.members.errors.present?
+    user = User.find(params[:id])
+    begin
+      @team.members << user
+    rescue
       redirect_to team_path(@team), flash: { error: 'Error adding member to team, please try again.' }
     else
       redirect_to team_path(@team)
@@ -51,7 +52,8 @@ class TeamsController < ApplicationController
   private
 
   def set_team_and_organization
-    @team = Team.find(params[:id]) if params[:id].present?
+    @team = Team.find(params[:team_id]) if params[:team_id].present?
+    @team ||= Team.find(params[:id]) if params[:id].present?
     @organization = @team.organization if @team.present?
     @organization ||= Organization.find(params[:organization_id]) if params[:organization_id].present?
   end

@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    if request.xhr? && params[:query].present?
+      @users = User.search(params[:query])
+      render json: @users.map {|u| {id: u.id, name: u.to_s, avatar: u.avatar_url(size: 28)}}.to_json
+    else
+      redirect_to root_path, alert: 'page not found.'
+    end
+  end
 
   def show
     @user = User.find(params[:id])
