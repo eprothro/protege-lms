@@ -45,7 +45,7 @@ class TeamsController < ApplicationController
   end
 
   def remove_member
-    user = User.find(params[:id])
+    user = User.find(params[:user_id])
     begin
       @team.members.delete(user)
     rescue

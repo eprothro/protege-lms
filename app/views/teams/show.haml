@@ -9,11 +9,11 @@
 - if @team.members.present?
   %ul
     - @team.members.each do |m|
-      %li.avatar.span5
+      %li.avatar.span5.clear-left
         .pull-left
           = render partial: "users/list_item", locals: {user: m}
         .pull-right
-          = button_to 'Remove', team_member_path(@team, m), class: 'btn btn-danger', method: :delete, "data-confirm" => "Permanently delete '#{m.name} from #{@team.name}'?"
+          = button_to 'Remove', team_member_path(@team, user_id: m.id), class: 'btn btn-danger', method: :delete, "data-confirm" => "Permanently delete '#{m.name} from #{@team.name}'?"
 - else
   .none.text-center
     %p.lead This team has no members yet...
