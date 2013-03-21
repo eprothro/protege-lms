@@ -34,7 +34,8 @@ ProtegeLms::Application.routes.draw do
     resources :teams
   end
 
-  post "teams/(:team_id)/member", to: 'teams#add_member', as: 'new_team_member'
+  post "teams/(:team_id)/member", to: 'teams#add_member', as: 'team_member'
+  delete "teams/(:team_id)/member/:user_id", to: 'teams#remove_member'
 
   # a series can be created independently of any other objects
   # the rest of the objects cannot (must use create paths above)

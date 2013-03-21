@@ -33,11 +33,25 @@ class TeamsController < ApplicationController
   def add_member
     user = User.find(params[:id])
     begin
+      if @team.members.exists?(user)
+        return redirect_to team_path(@team), flash: { error: "#{user.name} already a member" }
+      end
       @team.members << user
     rescue
-      redirect_to team_path(@team), flash: { error: 'Error adding member to team, please try again.' }
+      redirect_to team_path(@team), flash: { error: 'Error adding member to team, please try again' }
     else
       redirect_to team_path(@team)
+    end
+  end
+
+  def remove_member
+    user = User.find(params[:id])
+    begin
+      @team.members.delete(user)
+    rescue
+      redirect_to team_path(@team), flash: { error: 'Error removing member from team, please try again' }
+    else
+      redirect_to team_path(@team), notice: 'Member removed from team'
     end
   end
 

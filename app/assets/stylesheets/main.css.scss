@@ -46,6 +46,12 @@ ul.teams li{
 ul li.avatar{
   margin: 0px 10px 10px 10px;
   list-style-type: none;
+  border-bottom: 1px solid #ddd;
+}
+
+ul li.avatar-grid{
+  margin: 0px 0px 10px 10px;
+  list-style-type: none;
 }
 
 #footer{

@@ -1,8 +1,9 @@
 - content_for :content do
   .row
     %h3
-      = link_to (image_tag avatar_url(@organization, size: 28), class: 'img-border'), organization_path(@organization)
-      = @organization.name
+      - if @organization.id.present?
+        = link_to (image_tag avatar_url(@organization, size: 28), class: 'img-border'), organization_path(@organization)
+        = @organization.name
     = yield
 
 = render :template => 'layouts/application'

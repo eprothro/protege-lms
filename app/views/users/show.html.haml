@@ -13,7 +13,7 @@
         You aren't a part of any organizations yet...
     %ul
       - @user.organizations.each do |org|
-        %li.avatar.pull-left
+        %li.avatar-grid.pull-left
           = link_to( (image_tag avatar_url(org, size: 40), class: 'img-border', alt: org.name), organization_path(org) )
     %a.btn{href: new_organization_path}
       %i.icon-globe
@@ -25,7 +25,7 @@
         %li{class: ('active' unless params[:tab].present?)}
           = link_to 'Courses', tab: nil
         %li{class: ('active' if params[:tab] == 'other')}
-          = link_to 'Some other thing', tab: 'other'
+          = link_to 'Achievements', tab: 'other'
     .row
       - if params[:tab].blank?
         = render partial: 'courses', locals: { courses: @user.courses }
